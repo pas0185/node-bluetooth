@@ -56,6 +56,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    CBPeripheral *peripheral = [self.nodeConnectionHelper.allNodeDevices objectAtIndex:indexPath.row];
+    [self.nodeConnectionHelper connectDevice:peripheral forUseInBackground:NO];
+}
+
 #pragma mark - NodeConnectionHelperDelegate
 
 - (void)nodeConnectionHelperDidUpdateNodeDeviceList {
@@ -67,6 +73,20 @@
 
     [self.refreshControl endRefreshing];
 }
+
+- (void)nodeConnectionHelperDidConnectToPeripheral:(CBPeripheral *)peripheral {
+
+    self.connectedDevice = [[VTNodeDevice alloc] initWithDelegate:self withDevice:peripheral];
+}
+
+#pragma mark - NodeDeviceDelegate
+
+- (void)nodeDeviceIsReadyForCommunication:(VTNodeDevice *)device {
+    
+    NSLog(@"Node device is ready");
+    [self performSegueWithIdentifier:@"postConnectionSegue" sender:device];
+}
+
 #pragma mark - Refreshing
 
 -(void)refreshDeviceList:(UIRefreshControl *)refresh {

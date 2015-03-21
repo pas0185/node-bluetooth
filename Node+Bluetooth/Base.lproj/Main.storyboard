@@ -26,6 +26,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="gcZ-jp-tQK"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="push" id="gWl-tt-9NQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRy-kX-hS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="14" y="-440"/>
         </scene>
-        <!--View Controller-->
+        <!--Connected Device View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConnectedDeviceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -60,9 +63,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="f7R-1f-0be"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1693" y="-439"/>
         </scene>
     </scenes>
 </document>

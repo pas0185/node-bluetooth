@@ -15,6 +15,7 @@
 		1559539F1ABCEE88005777A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1559539D1ABCEE88005777A4 /* LaunchScreen.xib */; };
 		155953AB1ABCEE89005777A4 /* Node_BluetoothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 155953AA1ABCEE89005777A4 /* Node_BluetoothTests.m */; };
 		155953B61ABE3198005777A4 /* NodeConnectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155953B51ABE3198005777A4 /* NodeConnectionTableViewController.m */; };
+		155953B91ABE3C49005777A4 /* ConnectedDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 155953B81ABE3C49005777A4 /* ConnectedDeviceViewController.m */; };
 		F994FD11A51DFA1BE65464A7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2486E3463EACCBB2A23E403E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		155953AA1ABCEE89005777A4 /* Node_BluetoothTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node_BluetoothTests.m; sourceTree = "<group>"; };
 		155953B41ABE3198005777A4 /* NodeConnectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeConnectionTableViewController.h; sourceTree = "<group>"; };
 		155953B51ABE3198005777A4 /* NodeConnectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeConnectionTableViewController.m; sourceTree = "<group>"; };
+		155953B71ABE3C49005777A4 /* ConnectedDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedDeviceViewController.h; sourceTree = "<group>"; };
+		155953B81ABE3C49005777A4 /* ConnectedDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedDeviceViewController.m; sourceTree = "<group>"; };
 		2486E3463EACCBB2A23E403E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A70E4505DD6AEDC9E2DCF30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7EDD609AE4C447F39ECB41BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				1559538E1ABCEE88005777A4 /* Supporting Files */,
 				155953B41ABE3198005777A4 /* NodeConnectionTableViewController.h */,
 				155953B51ABE3198005777A4 /* NodeConnectionTableViewController.m */,
+				155953B71ABE3C49005777A4 /* ConnectedDeviceViewController.h */,
+				155953B81ABE3C49005777A4 /* ConnectedDeviceViewController.m */,
 			);
 			path = "Node+Bluetooth";
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				155953941ABCEE88005777A4 /* AppDelegate.m in Sources */,
 				155953911ABCEE88005777A4 /* main.m in Sources */,
 				155953B61ABE3198005777A4 /* NodeConnectionTableViewController.m in Sources */,
+				155953B91ABE3C49005777A4 /* ConnectedDeviceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
