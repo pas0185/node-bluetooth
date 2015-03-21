@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <VTNodeConnectionHelper.h>
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <Node_iOS/Node.h>
 
-@interface NodeConnectionTableViewController : UITableViewController
+@interface NodeConnectionTableViewController : UITableViewController<VTNodeConnectionHelperDelegate, NodeDeviceDelegate>
+
+@property (strong, nonatomic) VTNodeConnectionHelper *nodeConnectionHelper;
+@property (strong, nonatomic) VTNodeDevice *connectedDevice;
 
 @end

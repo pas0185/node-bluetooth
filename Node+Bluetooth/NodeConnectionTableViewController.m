@@ -17,11 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.nodeConnectionHelper = [VTNodeConnectionHelper connectionHelperwithDelegate:self];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshDeviceList:)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl beginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +34,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.nodeConnectionHelper.allNodeDevices.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    static NSString *CellIdentifier = @"NodeDeviceCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+                                                            forIndexPath:indexPath];
+    
+    CBPeripheral *peripheral = [self.nodeConnectionHelper.allNodeDevices objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = peripheral.name;
     
     return cell;
 }
-*/
+
+#pragma mark - NodeConnectionHelperDelegate
+
+- (void)nodeConnectionHelperDidUpdateNodeDeviceList {
+
+    [self.tableView reloadData];
+}
+
+#pragma mark - Refreshing
+
 
 /*
 // Override to support conditional editing of the table view.
