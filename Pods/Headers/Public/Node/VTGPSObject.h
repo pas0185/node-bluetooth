@@ -1,0 +1,1 @@
+../../../Node/Node_iOS.framework/Versions/A/Headers/VTGPSObject.h

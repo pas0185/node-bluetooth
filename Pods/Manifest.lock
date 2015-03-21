@@ -1,0 +1,13 @@
+PODS:
+  - Node (4.2.3)
+  - NodeConnectionHelper (1.0.2)
+
+DEPENDENCIES:
+  - Node
+  - NodeConnectionHelper
+
+SPEC CHECKSUMS:
+  Node: d84b6367255b75f585219a3acb5314b2e7dc6717
+  NodeConnectionHelper: d44fe1c603926f8cc356f45c99dce84c4f6712d0
+
+COCOAPODS: 0.36.0
