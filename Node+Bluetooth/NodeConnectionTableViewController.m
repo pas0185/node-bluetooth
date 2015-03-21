@@ -63,8 +63,16 @@
     [self.tableView reloadData];
 }
 
+- (void)nodeConnectionHelperDidFinishScanning {
+
+    [self.refreshControl endRefreshing];
+}
 #pragma mark - Refreshing
 
+-(void)refreshDeviceList:(UIRefreshControl *)refresh {
+
+    [self.nodeConnectionHelper startScanAndRetrievalOfPeripherals];
+}
 
 /*
 // Override to support conditional editing of the table view.
