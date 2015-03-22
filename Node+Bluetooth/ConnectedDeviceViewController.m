@@ -19,19 +19,27 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void) viewDidAppear:(BOOL)animated {
+    
+    self.connectedDevice.delegate = self;
+    [self.connectedDevice setAccelerometerScale:VTNodeAccelerometerScale16g];
+    [self.connectedDevice setStreamModeAcc:YES Gyro:NO Mag:NO
+                                withPeriod:1
+                              withLifetime:0
+                   withTimestampingEnabled:YES];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - NodeDeviceDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) nodeDeviceDidUpdateAccReading:(VTNodeDevice *)device withReading:(VTSensorReading *)reading atTime:(NSDate *)
+date {
+    
+    if(self.labelAccelerometer
+       == Nil) {
+        self.labelAccelerometer = [[UILabel alloc] initWithFrame:CGRectInset(self.view.bounds, 20, 50)];
+        [self.view addSubview:self.labelAccelerometer];
+    }
+    self.labelAccelerometer.text = [NSString stringWithFormat:@"%.3f, %.3f, %.3f", reading.x, reading.y, reading.z];
 }
-*/
 
 @end

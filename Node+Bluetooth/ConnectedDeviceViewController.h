@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) VTNodeDevice *connectedDevice;
 
+@property (strong, nonatomic) UILabel *labelAccelerometer;
+
 @end

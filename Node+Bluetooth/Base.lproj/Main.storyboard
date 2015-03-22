@@ -27,7 +27,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="gcZ-jp-tQK"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="push" id="gWl-tt-9NQ"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="postConnectionSegue" id="gWl-tt-9NQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRy-kX-hS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
